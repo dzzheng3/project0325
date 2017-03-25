@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PricingGame</string>
+
+    <!-- Toast Message -->
+    <string name="error_enter_message">Enter message</string>
+    <string name="error_no_internet">No Internet Connected</string>
+    <string name="error_server">Server Error</string>
+    <string name="error_authFailureError">AuthFailureError</string>
+    <string name="error_parse_error">Parse Error</string>
+    <string name="error_time_out">Connection Time Out</string>
+</resources>
