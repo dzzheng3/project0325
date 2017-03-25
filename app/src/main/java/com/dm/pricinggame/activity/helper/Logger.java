@@ -11,6 +11,7 @@ public class Logger {
     public static void e(String tag, String message) {
         if (debugMode) {
             Log.e(tag, message);
+
         }
     }
 }

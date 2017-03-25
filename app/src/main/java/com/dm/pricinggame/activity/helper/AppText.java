@@ -13,5 +13,5 @@ public class AppText {
 
     public static final String PLAYER_ID = "id";
 
-    // App text used
+    // App text used jjj
 }

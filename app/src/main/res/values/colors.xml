@@ -6,4 +6,126 @@
 
     <color name="colorWhite">#FFFFFF</color>
     <color name="transparent">#FFFFFF</color>
+
+    <!--activity color-->
+    <color name="activity_background">@android:color/transparent</color>
+
+    <!--TextView title -->
+    <color name="titleColor">#FF0F00</color>
+
+    <!--EditText Colors-->
+    <color name="editTextColor">#ff576c6c</color>
+    <color name="editTextHintColor">#3d14111c</color>
+    <color name="editTextBackground">@android:color/transparent</color>
+
+    <!--Button Colors-->
+    <color name="buttonTextColor">#FF688181</color>
+    <color name="buttonBackground">@android:color/transparent</color>
+
+    <!--Button Colors-->
+    <color name="textViewTextColor">#ff576c6c</color>
+    <color name="textViewBackground">@android:color/transparent</color>
+
+    <!--divider Color-->
+    <color name="dividerColor">#ff576c6c</color>
+
+    <!--imageView color-->
+    <color name="imageViewBackground">@android:color/transparent</color>
+
+
+    <color name="allWindowBackground">@color/gray_13pc</color>
+    <color name="positive_green">#27AE60</color>
+    <color name="negative_red">#E74C3C</color>
+    <color name="brown">#A52A2A</color>
+    <color name="cycan">#00FFFF</color>
+
+
+    <!--imageView color-->
+    <color name="spinnerBackground">@android:color/transparent</color>
+    <color name="actionbar">#3cb879</color>
+    <color name="body_background">#e8e8e8</color>
+    <color name="body_background_green">#82e783</color>
+    <color name="server_status_bar">#2b2b2b</color>
+    <color name="title_gray">#434343</color>
+    <color name="bg_msg_you">#5eb964</color>
+    <color name="bg_msg_from">#e5e7eb</color>
+    <color name="msg_border_color">#a1a1a1</color>
+    <color name="bg_btn_join">#1e6258</color>
+    <color name="bg_msg_input">#e8e8e8</color>
+    <color name="text_msg_input">#626262</color>
+    <color name="lblFromName">#777777</color>
+
+
+    <color name="gray_87pc">#ff212121</color>
+    <color name="gray_85pc">#ff263238</color>
+    <color name="gray_81pc">#ff323232</color>
+    <color name="gray_80pc">#ff333333</color>
+    <color name="gray_64pc">#ff58585b</color>
+    <color name="gray_62pc">#ff616161</color>
+    <color name="gray_60pc">#ff666666</color>
+    <color name="gray_54pc">#ff757575</color>
+    <color name="gray_53pc">#ff777777</color>
+    <color name="gray_50pc">#ff808080</color>
+    <color name="gray_48pc">#ff888888</color>
+    <color name="gray_42pc">#ff949494</color>
+    <color name="gray_38pc">#ff9e9e9e</color>
+    <color name="gray_26pc">#ffbdbdbd</color>
+    <color name="gray_20pc">#ffcccccc</color>
+    <color name="gray_17pc">#ffd3d3d3</color>
+    <color name="grey_15pc">#ffd8d8d8</color>
+    <color name="gray_14pc">#ffd9d9d9</color>
+    <color name="gray_13pc">#ffdddddd</color>
+    <color name="gray_10pc">#ffe5e5e5</color>
+    <color name="gray_9pc">#ffe8e8e8</color>
+    <color name="gray_8pc">#ffe9e9e9</color>
+    <color name="gray_7pc">#ffececec</color>
+    <color name="gray_6pc">#ffeeeeee</color>
+    <color name="grey_5pc">#fff2f2f2</color>
+    <color name="gray_4pc">#fff5f5f5</color>
+    <color name="gray_3pc">#fff6f6f6</color>
+    <color name="gray_2pc">#fff7f7f7</color>
+
+    <!--random -->
+    <item name="blue" type="color">#FF33B5E5</item>
+    <item name="purple" type="color">#FFAA66CC</item>
+    <item name="green" type="color">#FF99CC00</item>
+    <item name="orange" type="color">#FFFFBB33</item>
+    <item name="red" type="color">#FFFF4444</item>
+    <item name="darkblue" type="color">#FF0099CC</item>
+    <item name="darkpurple" type="color">#FF9933CC</item>
+    <item name="darkgreen" type="color">#FF669900</item>
+    <item name="darkorange" type="color">#FFFF8800</item>
+    <item name="darkred" type="color">#FFCC0000</item>
+
+    <integer-array name="androidcolors">
+        <item>@color/blue</item>
+        <item>@color/purple</item>
+        <item>@color/green</item>
+        <item>@color/orange</item>
+        <item>@color/red</item>
+        <item>@color/darkblue</item>
+        <item>@color/darkpurple</item>
+        <item>@color/darkgreen</item>
+        <item>@color/darkorange</item>
+        <item>@color/darkred</item>
+        <item>@color/colorAccent</item>
+        <item>@color/colorPrimary</item>
+        <item>@color/colorPrimaryDark</item>
+        <item>@color/editTextColor</item>
+    </integer-array>
+    <color name="black">#000000</color>
+    <color name="jet">#222222</color>
+    <color name="oil">#333333</color>
+    <color name="monsoon">#777777</color>
+    <color name="jumbo">#888888</color>
+    <color name="aluminum">#999999</color>
+    <color name="base">#AAAAAA</color>
+    <color name="iron">#CCCCCC</color>
+
+    <color name="white">#ffffff</color>
+    <color name="feed_bg">#d3d6db</color>
+    <color name="feed_item_bg">#ffffff</color>
+    <color name="feed_item_border">#c2c3c8</color>
+    <color name="link">#0a80d1</color>
+    <color name="timestamp">#a0a3a7</color>
 </resources>
