@@ -12,4 +12,6 @@ public class AppText {
     public static final String PASSWORD = "password";
 
     public static final String PLAYER_ID = "id";
+
+    // App text used
 }
