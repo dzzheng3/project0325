@@ -1,7 +1,6 @@
 package com.dm.pricinggame.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +9,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dm.pricinggame.R;
-import com.dm.pricinggame.activity.helper.AppText;
 import com.dm.pricinggame.activity.model.GameModel;
-import com.dm.pricinggame.decisiongame.DecisionGameActivity;
+import com.dm.pricinggame.eventbusinterface.ChooseGame;
 
 import java.util.ArrayList;
 
@@ -25,10 +23,12 @@ import butterknife.ButterKnife;
 public class GameAdapter extends RecyclerView.Adapter<GameAdapter.ViewHolder> {
     private Context context;
     private ArrayList<GameModel> gameModels;
+    ChooseGame chooseGame;
 
     public GameAdapter(Context context, ArrayList<GameModel> gameItem) {
         this.context = context;
         this.gameModels = gameItem;
+        chooseGame = (ChooseGame)context;
     }
 
     @Override
@@ -63,10 +63,10 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.ViewHolder> {
 
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(context.getApplicationContext(), DecisionGameActivity.class);
-            intent.putExtra(AppText.GAME_ID, gameModels.get(getLayoutPosition()).getGameId());
-            //messageStatusUpdateTask(mItem.get(getLayoutPosition()).getSenderId(), Api.Seen, getLayoutPosition());
-            context.startActivity(intent);
+            chooseGame.selectGame(getLayoutPosition(),gameModels.get(getLayoutPosition()).getGameId());
+//            Intent intent = new Intent(context.getApplicationContext(), DecisionGameActivity.class);
+//            intent.putExtra(AppText.GAME_ID, gameModels.get(getLayoutPosition()).getGameId());
+//            context.startActivity(intent);
         }
     }
 

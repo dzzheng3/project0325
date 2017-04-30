@@ -1,10 +1,7 @@
 package com.dm.pricinggame;
 
-<<<<<<< HEAD
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
-=======
->>>>>>> fdc06e79a7dc4fa55f3b6a3e1124aaf949942c7d
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -41,8 +38,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
-
-import com.dm.pricinggame.activity.PlayingGameActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -86,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             Logger.e("detail intent", "" + gameId);
         }
 
-        //Data is coming from questionList adapater
+
         Intent intent1 = getIntent();
         if (intent1 != null) {
             Logger.e("detail intent", " not null");
@@ -144,7 +139,6 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.bt_play_game)
     public void onBtPlayGameClicked() {
-<<<<<<< HEAD
         if (!spSelectGuess.getSelectedItem().toString().equalsIgnoreCase("Select Price")) {
             if (Api.isInNetwork(MainActivity.this)) {
                 if (areOneGoingGame == true) {
@@ -163,9 +157,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Please select price", Toast.LENGTH_SHORT).show();
         }
 
-=======
-        startActivity(new Intent(MainActivity.this,PlayingGameActivity.class));
->>>>>>> fdc06e79a7dc4fa55f3b6a3e1124aaf949942c7d
+       // startActivity(new Intent(MainActivity.this,PlayingGameActivity.class));
     }
 
     @OnClick(R.id.bt_search)
@@ -276,7 +268,8 @@ public class MainActivity extends AppCompatActivity {
                         //btn_next_level.setEnabled(true);
                         //btPlayGame.setEnabled(false);
                     } else {
-                        Toast.makeText(MainActivity.this, "Score Submission error", Toast.LENGTH_SHORT).show();
+                        /* {"status":"error","message":"Already submitted"}*/
+                        Toast.makeText(MainActivity.this, responseJson.getString("message"), Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     //catch

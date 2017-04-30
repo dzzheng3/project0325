@@ -32,6 +32,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView createAccText;
@@ -85,22 +86,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(i);
                 break;
             case R.id.btn_login:
-                LoginTask();
-
-<<<<<<< HEAD
-                //This should open for while connecting with server
-                if (!userEmail.getText().toString().isEmpty() && !userPassword.getText().toString().isEmpty()) {
-                    String user_email = userEmail.getText().toString();
-                    String user_password = userPassword.getText().toString();
-
-                    if (Api.isInNetwork(LoginActivity.this)) {
-                        //LoginTask();
-                        loginTask(user_email, user_password);
-                    } else {
-                        Toast.makeText(LoginActivity.this, "No Internet", Toast.LENGTH_SHORT).show();
-                    }
-=======
->>>>>>> fdc06e79a7dc4fa55f3b6a3e1124aaf949942c7d
+               // LoginTask();
 
                 //This should open for while connecting with server
 //                if (!userEmail.getText().toString().isEmpty() && !userPassword.getText().toString().isEmpty()) {
@@ -108,20 +94,33 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //                    String user_password = userPassword.getText().toString();
 //
 //                    if (Api.isInNetwork(LoginActivity.this)) {
+//                        //LoginTask();
 //                        loginTask(user_email, user_password);
 //                    } else {
 //                        Toast.makeText(LoginActivity.this, "No Internet", Toast.LENGTH_SHORT).show();
 //                    }
-//
-//                } else {
-//                    Toast.makeText(LoginActivity.this, "Please Enter User and password", Toast.LENGTH_SHORT).show();
-//                }
+
+
+                //This should open for while connecting with server
+                if (!userEmail.getText().toString().isEmpty() && !userPassword.getText().toString().isEmpty()) {
+                    String user_email = userEmail.getText().toString();
+                    String user_password = userPassword.getText().toString();
+
+                    if (Api.isInNetwork(LoginActivity.this)) {
+                        loginTask(user_email, user_password);
+                    } else {
+                        Toast.makeText(LoginActivity.this, "No Internet", Toast.LENGTH_SHORT).show();
+                    }
+
+                } else {
+                    Toast.makeText(LoginActivity.this, "Please Enter User and password", Toast.LENGTH_SHORT).show();
+                }
 
                 break;
 
-        }
+       // }
 
-    }
+    }}
 
     private void LoginTask() {
         startActivity(new Intent(this, GameListActivity.class));

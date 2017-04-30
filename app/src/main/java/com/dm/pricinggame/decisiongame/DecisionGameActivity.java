@@ -2,6 +2,7 @@ package com.dm.pricinggame.decisiongame;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -61,6 +62,7 @@ public class DecisionGameActivity extends AppCompatActivity {
     int lastNotPaid;
     private ProgressDialog progressDialog;
     private PreferenceHelper helper;
+    private int gameId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,8 +71,15 @@ public class DecisionGameActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         helper = new PreferenceHelper(DecisionGameActivity.this);
 
+        //Data is coming from  GameList Activity
+        Intent intent = getIntent();
+        if (intent != null) {
+            Logger.e("detail intent", " not null");
+            gameId = intent.getIntExtra(AppText.GAME_ID, 0);
+            Logger.e("detail intent", "" + gameId);
+        }
         if (Api.isInNetwork(DecisionGameActivity.this)) {
-            DecisionGInitTask("2");
+            DecisionGInitTask(String.valueOf(gameId));
         } else {
             Toast.makeText(DecisionGameActivity.this, "No Internet", Toast.LENGTH_SHORT).show();
         }

@@ -30,10 +30,13 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.dm.pricinggame.R;
 import com.dm.pricinggame.activity.helper.Api;
+import com.dm.pricinggame.activity.helper.AppText;
 import com.dm.pricinggame.activity.helper.Logger;
 import com.dm.pricinggame.activity.helper.PreferenceHelper;
 import com.dm.pricinggame.activity.model.GameModel;
 import com.dm.pricinggame.adapter.GameAdapter;
+import com.dm.pricinggame.decisiongame.DecisionGameActivity;
+import com.dm.pricinggame.eventbusinterface.ChooseGame;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,7 +47,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class GameListActivity extends AppCompatActivity {
+public class GameListActivity extends AppCompatActivity implements ChooseGame {
 
     @BindView(R.id.game_recycler_view)
     RecyclerView recyclerView;
@@ -254,5 +257,18 @@ public class GameListActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void selectGame(int position, int gameId) {
+        if (position==0){
+            Intent intent = new Intent(GameListActivity.this, NewAvailableGame.class);
+            intent.putExtra(AppText.GAME_ID, gameId);
+            startActivity(intent);
+        }else if (position == 1){
+            Intent intent = new Intent(GameListActivity.this, DecisionGameActivity.class);
+            intent.putExtra(AppText.GAME_ID, gameId);
+            startActivity(intent);
+        }
     }
 }

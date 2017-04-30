@@ -73,7 +73,7 @@ public class NewAvailableGame extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_available_game);
-        //Data is coming from questionList adapater
+        //Data is coming from Availble Game adapater
         Intent intent = getIntent();
         if (intent != null) {
             Logger.e("detail intent", " not null");
