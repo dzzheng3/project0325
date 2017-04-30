@@ -21,11 +21,16 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.RegistrationActivity" />
+<<<<<<< HEAD
         <activity android:name=".activity.GameListActivity" />
         <activity android:name=".activity.model.ViewProfitActivity" />
         <activity android:name=".activity.NewAvailableGame" />
         <activity android:name=".activity.CompletedGameHistory" />
         <activity android:name=".decisiongame.DecisionGameActivity"></activity>
+=======
+        <activity android:name=".activity.PlayingGameActivity"/>
+        <activity android:name=".activity.ResultActivity"/>
+>>>>>>> fdc06e79a7dc4fa55f3b6a3e1124aaf949942c7d
     </application>
 
 </manifest>
