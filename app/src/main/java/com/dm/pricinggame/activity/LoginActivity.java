@@ -23,16 +23,13 @@ import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.dm.pricinggame.MainActivity;
 import com.dm.pricinggame.R;
 import com.dm.pricinggame.activity.helper.Api;
+import com.dm.pricinggame.activity.helper.AppText;
 import com.dm.pricinggame.activity.helper.PreferenceHelper;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
 
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -49,6 +46,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         helper = new PreferenceHelper(LoginActivity.this);
+        if (helper.getBoolean(AppText.IS_LOGIN, false)) {
+            startActivity(new Intent(LoginActivity.this, GameListActivity.class));
+            finish();
+        }
         initView();
 
         progressDialog = new ProgressDialog(LoginActivity.this);//R.style.AppTheme_Dark_Dialog);
@@ -92,6 +93,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     String user_password = userPassword.getText().toString();
 
                     if (Api.isInNetwork(LoginActivity.this)) {
+                        //LoginTask();
                         loginTask(user_email, user_password);
                     } else {
                         Toast.makeText(LoginActivity.this, "No Internet", Toast.LENGTH_SHORT).show();
@@ -108,14 +110,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void LoginTask() {
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, GameListActivity.class));
 
     }
 
     private void loginTask(final String userEmail, final String password) {
-        String url = Api.loginUrl;
+        String url = Api.loginUrl+"?email="+userEmail+"&pass="+password;
 
-        StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {
@@ -124,17 +126,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 try {
                     JSONObject responseJson = new JSONObject(response);
                     if (responseJson.getString("status").equalsIgnoreCase("success")) {
-/*                        JSONObject userDetail = responseJson.getJSONObject("user_data");
 
-                        helper.edit().putString(AppText.PLAYER_ID, userDetail.getString("member_id")).commit();
-                        helper.edit().putString(AppText.NAME_PLAYER, userDetail.getString("Name")).commit();
+                        JSONObject userDetail = responseJson.getJSONObject("data");
+                        helper.edit().putString(AppText.PLAYER_ID, userDetail.getString("id")).commit();
+                        helper.edit().putString(AppText.NAME_PLAYER, userDetail.getString("username")).commit();
                         helper.edit().putString(AppText.EMAIL, userDetail.getString("email")).commit();
-                        helper.edit().putString(AppText.PASSWORD, userDetail.getString("Password")).commit();
-                        helper.edit().putBoolean(AppText.IS_LOGIN, true).commit();*/
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                        Toast.makeText(LoginActivity.this, responseJson.getString("message") + "", Toast.LENGTH_SHORT).show();
+                        helper.edit().putString(AppText.ROLE, userDetail.getString("role")).commit();
+                        helper.edit().putBoolean(AppText.IS_LOGIN, true).commit();
+                        Toast.makeText(LoginActivity.this,"Login sucessfully", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(LoginActivity.this, GameListActivity.class));
+                        finish();
                     } else {
-                        Toast.makeText(LoginActivity.this, responseJson.getString("message") + "", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this,"Login Error ", Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     //catch
@@ -163,14 +166,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }
             }
         }) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> map = new HashMap<>();
-                map.put("username", userEmail);
-                map.put("password", password);
-                com.dm.pricinggame.activity.helper.Logger.e("loginTask post params123", userEmail + " : " + password);
-                return map;
-            }
+//            @Override
+//            protected Map<String, String> getParams() throws AuthFailureError {
+//                Map<String, String> map = new HashMap<>();
+//                map.put("username", userEmail);
+//                map.put("password", password);
+//                com.dm.pricinggame.activity.helper.Logger.e("loginTask post params123", userEmail + " : " + password);
+//                return map;
+//            }
         };
 
         final RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);

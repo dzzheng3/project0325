@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.dm.pricinggame.activity.CompletedGameHistory">
+
+    <item android:id="@+id/action_completed_game"
+        android:title="Completed Game History"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+
+</menu>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:elevation="5dp">
+
+        <RelativeLayout
+            android:id="@+id/msg_layout"
+            android:layout_marginRight="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:tint="@color/actionbar"
+                android:layout_gravity="center"
+                android:id="@+id/iv_doller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dollor"/>
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:id="@+id/game_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:textColor="@color/actionbar"
+                android:text="Game Name"
+                android:textSize="15sp"
+                android:layout_alignTop="@+id/iv_doller"
+                android:layout_toEndOf="@+id/iv_doller" />
+
+            <TextView
+                android:id="@+id/created_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/actionbar"
+                android:text="Created_date"
+                android:textSize="12sp"
+                android:layout_below="@+id/game_name"
+                android:layout_toEndOf="@+id/iv_doller" />
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

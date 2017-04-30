@@ -18,10 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.RegistrationActivity" />
+        <activity android:name=".activity.GameListActivity" />
+        <activity android:name=".activity.model.ViewProfitActivity" />
+        <activity android:name=".activity.NewAvailableGame" />
+        <activity android:name=".activity.CompletedGameHistory" />
+        <activity android:name=".decisiongame.DecisionGameActivity"></activity>
     </application>
 
 </manifest>
